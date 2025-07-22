@@ -54,11 +54,11 @@ from sklearn.ensemble import RandomForestRegressor
 
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
+model.score(X_train, y_train)
 
-from sklearn.metrics import mean_absolute_error, r2_score
+from sklearn.metrics import r2_score
 
 y_pred = model.predict(X_val)
-print("MAE:", mean_absolute_error(y_val, y_pred))
 print("R2 Score:", r2_score(y_val, y_pred))
 
 test_df_copy = test_df.copy()
